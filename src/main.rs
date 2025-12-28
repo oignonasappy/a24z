@@ -24,12 +24,12 @@ fn main() {
 fn a24z(input: &str) -> String {
     input
         .split_whitespace() // 空白文字で分割
-        .map(a24z_each_word) // 文字単位でNumeronymに変換
+        .map(a24z_each_word) // 単語単位でNumeronymに変換
         .collect::<Vec<String>>() // IteratorをVecに変換
         .join(" ") // 空白文字で再結合
 }
 
-/// 空白を含まない、文字単位でNumeronymに変換します。
+/// 空白を含まない、単語単位でNumeronymに変換します。
 fn a24z_each_word(word: &str) -> String {
     // 3文字以下はNumeronymにできないのでそのまま
     if word.chars().count() <= 3 {
